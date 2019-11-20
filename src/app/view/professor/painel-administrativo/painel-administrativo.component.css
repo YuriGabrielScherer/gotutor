@@ -1,0 +1,218 @@
+.telaAdministrativa {
+    width: 100%;
+    /* margin-top: 20px; */
+    /* margin-bottom: 20px; */
+    min-height: 473px;
+    padding: 15px 0px 15px 0px;
+    background-color: rgba(243, 243, 243, 0.911);
+    border-radius: 3px;
+}
+
+.pontilhado {
+    border: 1px dotted black!important;
+}
+
+.rowAdmin {
+    border-bottom: 1px rgb(17, 17, 61) solid;
+}
+
+/* Rows com 0 de Margin */
+
+.rowCentral, .subImagem, .divImagem, .rowAdmin {
+    margin: 0px
+}
+
+/* Primeira Div */
+
+.divCentral {
+    /* padding: 15px;  */
+    background-color: rgba(218, 243, 255, 0.8);
+}
+
+/* Row Central com informacoes */
+
+.rowCentral {
+    padding: 20px 0px 20px 0px;
+}
+
+/* Div da Imagem */
+
+.divFoto {
+    border: 1px solid rgb(185, 182, 182);
+    border-radius: 5px;
+    padding: 5px 0px 5px 0px;
+}
+
+.divImagem, .divImagemModal {
+    text-align: center;
+}
+
+.imagem {
+    background-color: pink;
+    border: 2px solid black;
+    border-radius: 5px;
+    /* Ajustando o tamanho */
+    width: 13em;
+}
+
+.subImagem {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.subImagem label {
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+/* Div Informacoes */
+
+blockquote {
+    border-left-color: #78bef8!important;
+    color: black;
+}
+
+blockquote a {
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Imagem universidade */
+
+.divImgUni {
+    padding: 5px 15px 5px 5px;
+    overflow: hidden;
+}
+
+.divTextoUniversidade {
+    width: 100px;
+    /* background-color: pink; */
+    text-align: center;
+    float: left;
+}
+
+.divImgUniversidade {
+    float: right;
+    /* width: 13rem; */
+}
+
+.imgUniversidade {
+    /* border: 2px black solid; */
+    background-color: transparent;
+    width: 13rem;
+}
+
+/* Parte com as informacoes e Links para o professor */
+
+.container {
+    width: 80%!important;
+}
+
+.colTabela {
+    padding: 0px
+}
+
+/* Mudando as cores do Tabs */
+
+.tabs .tab a {
+    color: rgba(16, 13, 197, 0.7);
+    font-weight: bold;
+    /*Custom Text Color*/
+}
+
+.tabs .tab a:hover {
+    color: #6a84f8;
+    /*Custom Color On Hover*/
+}
+
+.tabs .tab a:focus.active {
+    color: #191a4e;
+    /*Custom Text Color While Active*/
+    background-color: rgba(84, 100, 247, 0.3);
+    /*Custom Background Color While Active*/
+}
+
+/* Parte do Aluno */
+
+.rowTab {
+    width: 100%;
+    margin: 0px;
+    padding-bottom: 15px;
+    background-color: rgb(240, 255, 255, 0.85);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.divLinksAluno {
+    height: 232px;
+    padding: 40px 0;
+}
+
+.divSpan {
+    padding: 25px;
+    text-align: center;
+}
+
+/* Botoes de Link para outras paginas */
+
+.btnAluno {
+    font-size: 15px;
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+    padding: 10px;
+    cursor: pointer;
+    margin: 0 0 0;
+    width: 100%;
+    text-decoration: none;
+    text-transform: uppercase;
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+}
+
+.btnAluno-5 {
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+    outline-color: rgba(255, 255, 255, .5);
+    outline-offset: 0px;
+    text-shadow: none;
+    transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.btnAluno-5:hover {
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 15px;
+    text-shadow: 2px 2px 3px #427388;
+    border-radius: 15px;
+    border: 1px solid #90caf98f;
+    background-color: #90caf9;
+}
+
+.divImgAluno {
+    text-align: center;
+    padding-top: 20px
+}
+
+/* Modal */
+
+.rowModal {
+    margin: 0px;
+}
+
+.modal .modal-content {
+    padding-bottom: 12px!important;
+}
+
+.modal span {
+    font-weight: bold;
+}
+
+.divImagemModal, .divDescModal {
+    min-height: 15rem;
+}
+
+.rowBotoes button{
+    margin-left: 10px;
+}

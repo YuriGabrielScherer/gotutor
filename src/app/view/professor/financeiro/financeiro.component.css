@@ -1,0 +1,692 @@
+.alunosDevedores {
+    padding: 0.5rem;
+}
+
+.rowGeral {
+    margin-bottom: 0px;
+    padding: 1rem;
+    background-color: rgba(243, 243, 243, 0.911);
+    border-radius: 3px;
+}
+
+.divTitulo button {
+    float: right;
+    margin-top: 0.8rem;
+}
+
+.divTitulo h4 {
+    width: 30rem;
+    float: left;
+    margin-left: 1rem;
+}
+
+.modal-content h4, .divTitulo h4 {
+    color: rgb(57, 96, 139);
+    text-shadow: 0.05rem 0.05rem 0.05rem #333;
+    font-weight: bold;
+}
+
+/* Div que vai ter um scroll */
+
+.scroll {
+    /* Se necessario, Scroll Vertical */
+    overflow-y: auto;
+    /* Scroll horizontal escondido */
+    overflow-x: hidden;
+    max-height: 500px;
+    border-radius: 10px;
+}
+
+/* Table de Listagem de Aluno */
+
+/* Hover */
+
+.tabelaAluno tbody tr:hover {
+    background-color: rgba(154, 213, 218, 0.6);
+    cursor: pointer
+}
+
+/* Organizando o titulo */
+
+.tabelaAluno thead {
+    position: relative;
+}
+
+.thAluno h5 {
+    text-align: center;
+    padding: 15px;
+    margin: 0px;
+    background-color: rgb(255, 255, 255, 0.85);
+    /* Texto */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Corpo da Tabela */
+
+.tabelaAluno tbody {
+    display: block;
+}
+
+.tdFoto {
+    min-width: 70px;
+    max-width: 75px;
+    padding: 2px 2px 0px 2px;
+}
+
+/* Ajustando a imagem */
+
+.chip {
+    height: 50px;
+    margin-left: 2px;
+    padding: 0px 6px 0px 6px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+}
+
+.chip img {
+    margin: 0px!important;
+    width: 50px;
+    height: 50px;
+}
+
+.tdAluno {
+    min-width: 500px;
+    font-weight: bold;
+}
+
+/* Ajustando conforme a tela */
+
+@media (min-width: 1358px) {
+    .tdAluno {
+        min-width: 530px;
+    }
+}
+
+@media (max-width: 1358px) and (min-width:1283px) {
+    .tdAluno {
+        min-width: 500px;
+    }
+}
+
+@media (max-width: 1283px) and (min-width:1100px) {
+    .tdAluno {
+        min-width: 400px;
+    }
+}
+
+@media (max-width: 1100px) and (min-width:993px) {
+    .tdAluno {
+        min-width: 300px;
+    }
+}
+
+@media (max-width: 992px) and (min-width: 870px) {
+    .tdAluno {
+        min-width: 600px;
+    }
+}
+
+@media (max-width: 870px) and (min-width: 760px) {
+    .tdAluno {
+        min-width: 500px;
+    }
+}
+
+@media (max-width: 760px) and (min-width: 670px) {
+    .tdAluno {
+        min-width: 400px;
+    }
+}
+
+@media (max-width: 670px) and (min-width: 580px) {
+    .tdAluno {
+        min-width: 300px;
+    }
+}
+
+@media (max-width: 580px) {
+    .tdAluno {
+        min-width: 230px;
+    }
+}
+
+/* Detalhes do Aluno */
+
+.divListaAluno {
+    padding: 0px!important;
+    /* height: 510px; */
+    /* border: 1px solid grey;
+    border-radius: 10px; */
+}
+
+@media (max-width:992px) {
+    /* Caso a tela venha a diminuir, ajustar as margens.  */
+    .divListaAluno {
+        margin-top: 40px;
+    }
+}
+
+.divCarregando{
+    width: 100%;
+    height:  100%;
+
+    text-align: center;
+    margin-top: 20px;
+}
+
+.rowListaAluno {
+    margin: 0px;
+    padding: 5px;
+    /* text-align: center; */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.rowListaAluno h5 {
+    margin: 0px;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Espacamento entre HR e div Rodape com botoes */
+
+.hr {
+    margin-top: 10px;
+    margin-left: -0.8rem;
+    margin-right: -0.8rem;
+}
+
+/* Aba De Troca entre detalhe e lista de Aula */
+
+.rowAba {
+    margin-left: -0.3rem;
+    margin-right: -0.3rem;
+    margin-bottom: 0px;
+}
+
+.tabs .tab a {
+    /*Custom Text Color*/
+    color: rgba(19, 77, 71, 0.7)!important;
+    font-weight: bold!important ;
+}
+
+.tabs .tab a:hover {
+    /*Custom Color On Hover*/
+    color: #26a69a!important;
+}
+
+.tabs .tab a:focus.active {
+    /*Custom Text Color While Active*/
+    color: #26a69a!important;
+    /*Custom Background Color While Active*/
+    background-color: rgba(38, 166, 154, 0.2)!important;
+}
+.tabs .indicator{
+    background-color: red!important;
+}
+
+/* Div Detalhes dos Alunos */
+#detalheAluno{
+    min-height: 370px;
+}
+#detalheAluno .row {
+    margin: 0px;
+    margin-bottom: 20px;
+}
+
+.divDetalheAluno span {
+    font-weight: bold;
+}
+
+.rowDetalheAluno{
+    margin-top: 15px!important;
+}
+
+.imgAlunoDetalhe {
+    text-align: center;
+    padding: 10px;
+}
+
+.imgAlunoDetalhe img {
+    height: 150px;
+    width: 150px;
+    border-radius: 70px;
+}
+
+.imgAlunoDetalhe img:hover {
+    border: 2px solid black;
+}
+
+.descEmail {
+    margin-top: 10px;
+}
+
+.rowEnviaEmail {
+    display: flex;
+    align-items: center;
+}
+
+.divBotao button {
+    flex: 1;
+}
+
+/* Tabela com dados do Aluno */
+
+.dadosAluno {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+/* Estilizando a Tabela e Deixando o Thead fixo */
+
+.tabela {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+.tabela th {
+    display: table-cell!important;
+    text-decoration: none;
+}
+
+.tabela th, .tabela td {
+    text-align: left;
+}
+
+.tabela thead {
+    /* background-color: #333; */
+    /* color: #FDFDFD; */
+    width: 100%;
+}
+
+.tabela thead tr {
+    display: block;
+    position: relative;
+    border: none!important;
+}
+
+.tabela tbody {
+    display: block!important;
+    overflow: auto;
+    width: 100%;
+    height: 300px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.tabela tbody tr {
+    display: block;
+}
+
+/* Deixando Zebrado */
+
+.tabela tbody tr:nth-child(odd) {
+    background-color: rgb(255, 255, 255);
+}
+
+/* Hover */
+
+.tabela tbody tr:hover {
+    cursor: pointer;
+    background-color: rgb(191, 200, 216);
+}
+
+/* Ajustando fundo das Celulas que nao foram pagas */
+
+.fundo {
+    background-color: rgb(248, 151, 151)!important;
+}
+
+.fundo1 {
+    background-color: rgb(252, 66, 66)!important;
+}
+
+/* -------------------- */
+
+/* Ajustando tamanho da Tabela conforme a tela */
+
+/* -------------------- */
+
+@media (min-width: 1290px) {
+    /* Largura do Campo Referencia */
+    .tabela td:nth-child(1), .tabela th:nth-child(1) {
+        min-width: 60px;
+    }
+    /* Largura do Campo Valor */
+    .tabela th:nth-child(2) {
+        min-width: 85px;
+    }
+    .tabela td:nth-child(2){
+        min-width: 60px;
+    }
+    /* Largura do Campo Pago */
+    .tabela td:nth-child(3), .tabela th:nth-child(3) {
+        min-width: 80px;
+    }
+    /* Largura do Campo Forma PGTO */
+    .tabela td:nth-child(4), .tabela th:nth-child(4) {
+        min-width: 90px;
+    }
+    /* Largura do Campo Parcelas */
+    .tabela th:nth-child(5) {
+        min-width: 75px;
+    }
+    .tabela td:nth-child(5){
+      min-width: 80px;
+      text-align: center;
+    }
+    /* Largura do Campo Vencimento */
+    .tabela td:nth-child(6), .tabela th:nth-child(6) {
+        min-width: 107px;
+    }
+}
+
+@media (min-width:1150px) and (max-width:1290px) {
+    /* Largura do Campo Referencia */
+    .tabela td:nth-child(1), .tabela th:nth-child(1) {
+        min-width: 40px;
+    }
+    /* Largura do Campo Valor */
+    .tabela td:nth-child(2), .tabela th:nth-child(2) {
+        min-width: 60px;
+    }
+    /* Largura do Campo Pago */
+    .tabela td:nth-child(3), .tabela th:nth-child(3) {
+        min-width: 65px;
+    }
+    /* Largura do Campo Forma PGTO */
+    .tabela td:nth-child(4), .tabela th:nth-child(4) {
+        min-width: 80px;
+    }
+    /* Largura do Campo Parcelas */
+    .tabela td:nth-child(5), .tabela th:nth-child(5) {
+        min-width: 65px;
+    }
+    /* Largura do Campo Vencimento */
+    .tabela td:nth-child(6), .tabela th:nth-child(6) {
+        min-width: 90px;
+    }
+    tbody tr {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1070px) and (max-width: 1150px) {
+    /* Largura do Campo Referencia */
+    .tabela td:nth-child(1), .tabela th:nth-child(1) {
+        min-width: 30px;
+    }
+    /* Largura do Campo Valor */
+    .tabela td:nth-child(2), .tabela th:nth-child(2) {
+        min-width: 60px;
+    }
+    /* Largura do Campo Pago */
+    .tabela td:nth-child(3), .tabela th:nth-child(3) {
+        min-width: 55px;
+    }
+    /* Largura do Campo Forma PGTO */
+    .tabela td:nth-child(4), .tabela th:nth-child(4) {
+        min-width: 70px;
+    }
+    /* Largura do Campo Parcelas */
+    .tabela td:nth-child(5), .tabela th:nth-child(5) {
+        min-width: 70px;
+    }
+    /* Deixando o texto centralizado */
+    .tdParcela, .tdForma, .tdVencimento {
+        text-align: center!important;
+    }
+    /* Largura do Campo Vencimento */
+    .tabela th:nth-child(6) {
+        min-width: 80px;
+    }
+    .tabela td:nth-child(6) {
+        min-width: 80px;
+    }
+    /* Ajustando botoes */
+    .btn1, .btn2, .btn3 {
+        margin-right: 5px!important;
+    }
+}
+
+@media (min-width: 993px) and (max-width: 1070px) {
+    /* Largura do Campo Referencia */
+    .tabela td:nth-child(1), .tabela th:nth-child(1) {
+        min-width: 30px;
+    }
+    /* Largura do Campo Valor */
+    .tabela td:nth-child(2), .tabela th:nth-child(2) {
+        min-width: 60px;
+    }
+    /* Largura do Campo Pago */
+    .tabela td:nth-child(3), .tabela th:nth-child(3) {
+        min-width: 55px;
+    }
+    /* Largura do Campo Forma PGTO */
+    .tabela td:nth-child(4), .tabela th:nth-child(4) {
+        min-width: 70px;
+    }
+    /* Largura do Campo Parcelas */
+    .tabela td:nth-child(5), .tabela th:nth-child(5) {
+        min-width: 70px;
+    }
+    /* Deixando o texto centralizado */
+    .tdParcela, .tdForma, .tdVencimento {
+        text-align: center!important;
+    }
+    /* Largura do Campo Vencimento */
+    .tabela th:nth-child(6) {
+        min-width: 80px;
+    }
+    .tabela td:nth-child(6) {
+        min-width: 80px;
+    }
+    /* Ajustando botoes */
+    .btn1, .btn2, .btn3 {
+        margin-right: 5px!important;
+    }
+}
+
+@media (min-width: 702px) and (max-width: 993px) {
+    /* Largura do Campo Referencia */
+    .tabela td:nth-child(1), .tabela th:nth-child(1) {
+        min-width: 100px;
+    }
+    /* Largura do Campo Valor */
+    .tabela td:nth-child(2), .tabela th:nth-child(2) {
+        min-width: 100px;
+    }
+    /* Largura do Campo Pago */
+    .tabela td:nth-child(3), .tabela th:nth-child(3) {
+        min-width: 100px;
+    }
+    /* Largura do Campo Forma PGTO */
+    .tabela td:nth-child(4), .tabela th:nth-child(4) {
+        min-width: 100px;
+    }
+    /* Largura do Campo Parcelas */
+    .tabela td:nth-child(5), .tabela th:nth-child(5) {
+        min-width: 100px;
+    }
+    /* Largura do Campo Vencimento */
+    .tabela th:nth-child(6), .tabela td:nth-child(6) {
+        min-width: 100px;
+    }
+}
+
+@media (min-width: 612px) and (max-width: 702px) {
+    /* Largura do Campo Referencia */
+    .tabela td:nth-child(1), .tabela th:nth-child(1) {
+        min-width: 50px;
+    }
+    /* Largura do Campo Valor */
+    .tabela td:nth-child(2), .tabela th:nth-child(2) {
+        min-width: 90px;
+    }
+    /* Largura do Campo Pago */
+    .tabela td:nth-child(3), .tabela th:nth-child(3) {
+        min-width: 90px;
+    }
+    /* Largura do Campo Forma PGTO */
+    .tabela td:nth-child(4), .tabela th:nth-child(4) {
+        min-width: 90px;
+    }
+    /* Largura do Campo Parcelas */
+    .tabela td:nth-child(5), .tabela th:nth-child(5) {
+        min-width: 90px;
+    }
+    /* Largura do Campo Vencimento */
+    .tabela th:nth-child(6), .tabela td:nth-child(6) {
+        min-width: 100px;
+    }
+}
+
+@media (min-width: 562px) and (max-width: 612px) {
+    /* Tirando o Display Block para preencher a linha */
+    tbody tr {
+        display: table-row;
+    }
+    /* Largura do Campo Referencia */
+    .tabela td:nth-child(1), .tabela th:nth-child(1) {
+        min-width: 50px;
+    }
+    /* Largura do Campo Valor */
+    .tabela td:nth-child(2), .tabela th:nth-child(2) {
+        min-width: 90px;
+    }
+    /* Largura do Campo Pago */
+    .tabela td:nth-child(3), .tabela th:nth-child(3) {
+        min-width: 60px;
+    }
+    /* Largura do Campo Forma PGTO */
+    .tabela td:nth-child(4), .tabela th:nth-child(4) {
+        min-width: 90px;
+    }
+    /* Largura do Campo Parcelas */
+    .tabela td:nth-child(5), .tabela th:nth-child(5) {
+        min-width: 90px;
+    }
+    /* Largura do Campo Vencimento */
+    .tabela th:nth-child(6), .tabela td:nth-child(6) {
+        min-width: 100px;
+    }
+}
+
+@media (max-width: 562px) {
+    /* Tirando o Display Block para preencher a linha */
+    tbody tr {
+        display: table-row;
+    }
+    /* Largura do Campo Referencia */
+    .tabela td:nth-child(1), .tabela th:nth-child(1) {
+        min-width: 50px;
+    }
+    /* Largura do Campo Valor */
+    .tabela td:nth-child(2), .tabela th:nth-child(2) {
+        min-width: 70px;
+    }
+    /* Largura do Campo Pago */
+    .tabela td:nth-child(3), .tabela th:nth-child(3) {
+        min-width: 60px;
+    }
+    /* Largura do Campo Forma PGTO */
+    .tabela td:nth-child(4), .tabela th:nth-child(4) {
+        min-width: 70px;
+    }
+    /* Largura do Campo Parcelas */
+    .tabela td:nth-child(5), .tabela th:nth-child(5) {
+        min-width: 90px;
+    }
+    /* Largura do Campo Vencimento */
+    .tabela th:nth-child(6), .tabela td:nth-child(6) {
+        min-width: 100px;
+    }
+}
+
+/* -------------------- */
+
+/* Estilizando a barra de rolagem */
+
+::-webkit-scrollbar {
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(156, 156, 156);
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+/* Rodape da div de Detalhes do Aluno */
+
+.rodapeAluno {
+    padding: 10px 15px 15px 15px;
+    text-align: center;
+}
+
+.btn1 {
+    margin-right: 35px;
+}
+
+.btn2 {
+    margin-right: 35px;
+}
+
+.btn3 {
+    margin-right: 20px;
+}
+
+/* Modal */
+
+.modal {
+    width: 60%;
+    min-height: 400px!important;
+}
+
+.modal-close {
+    margin-left: 1rem!important;
+}
+
+.textoExclusao {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.divBotoes, .divBotoes button {
+    float: right;
+}
+
+form p {
+    margin-bottom: 10px;
+}
+
+.datepicker-controls .select-month input {
+    width: 80px!important;
+}
+
+/* Graficos */
+
+/* Cria espaço entre os charts */
+
+.divPieChart {
+    padding-right: 3rem;
+    padding-left: 3rem;
+    margin: 0 auto;
+}
+
+.divBarChart {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    margin: 0 auto;
+}
+
+.divPieChart h4, .divBarChart h4 {
+    margin-top: 0px;
+}
+
+

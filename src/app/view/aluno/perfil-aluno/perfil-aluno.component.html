@@ -1,0 +1,144 @@
+<section class="perfilAluno ">
+    <div class="row rowAdministrativa">
+        <div class="col s12 m5 l3 partePerfil">
+            <div class="row rowNomeAluno">
+                <span>{{ aluno.nome_aluno }}</span>
+            </div>
+            <div class="row rowImgAluno">
+                <img class="imgAluno" src="{{ aluno.foto_aluno }}">
+            </div>
+            <div class="row rowInformacoesAluno">
+                <p><span>Se tiver alguma prestacao em aberto.</span></p>
+                <p><span>Proxima aula <a routerLink="#">clique aqui.</a></span></p>
+        </div>
+        </div>
+
+        <div class="col s12 m7 l9 partePrincipal">
+            <div class="row primeiraLinha">
+                <div class="col s12 m12 l6 pGrid blue lighten-5">
+                    <div class="row pHeader">
+                        <div class="col s8 m8 l8 pDireito">
+                            <div class="pTitulo">
+                                <span>Dados Pessoais</span>
+                            </div>
+                            <div class="pDesc">
+                                <span> Garanta que seus dados estejam sempre atualizados
+                                    para garantir o melhor aprendizado durante suas aulas.
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col s4 m4 l4 pImg">
+                            <img src="../../../../assets/perfilAluno/people.png">
+                        </div>
+                    </div>
+
+                    <div class="pFooter">
+                        <span><a routerLink="/perfilAluno">Gerencie seus dados aqui</a></span>
+                    </div>
+                </div>
+                <div class="col s12 m12 l6 pGrid blue lighten-5">
+                    <div class="row pHeader">
+                        <div class="col s8 m8 l8 pDireito">
+                            <div class="pTitulo">
+                                <span>Pagamentos</span>
+                            </div>
+                            <div class="pDesc">
+                                <span> Não fique atrasado com nada. De maneira rápida, gerencie suas contas e
+                                    pagamentos das aulas.
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col s4 m4 l4 pImg">
+                            <!-- Icons made by https://www.flaticon.com/authors/smalllikeart title="smalllikeart" -->
+                            <img src="../../../../assets/perfilAluno/financeiro.png">
+                        </div>
+                    </div>
+
+                    <div class="pFooter">
+                        <span><a class="modal-trigger" href="#modal1">Pagamentos</a></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row segundaLinha">
+                <div class="col s12 m12 l6 pGrid blue lighten-5">
+                    <div class="row pHeader">
+                        <div class="col s8 m8 l8 pDireito">
+                            <div class="pTitulo">
+                                <span>Agende uma aula agora mesmo</span>
+                            </div>
+                            <div class="pDesc">
+                                <span> Agende uma aula com seu professor agora mesmo, não deixe para depois o conteúdo
+                                    que você pode estudar agora!
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col s4 m4 l4 pImg">
+                            <img src="../../../../assets/perfilAluno/calendar.png">
+                        </div>
+                    </div>
+
+                    <div class="pFooter">
+                        <span><a routerLink="/perfilAluno">Agendar Aula</a></span>
+                    </div>
+                </div>
+
+                <div class="col s12 m12 l6 pGrid blue lighten-5">
+                    <div class="row pHeader">
+                        <div class="col s8 m8 l8 pDireito">
+                            <div class="pTitulo">
+                                <span>Aulas Disponíveis</span>
+                            </div>
+                            <div class="pDesc">
+                                <span> Visualize as aulas disponíveis com os seus professores e fique
+                                    capacitado para os melhores e maiores desafios que virão na sua vida.
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col s4 m4 l4 pImg">
+                            <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/smalllikeart" title="smalllikeart">smalllikeart</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div> -->
+                            <img src="../../../../assets/perfilAluno/contact.png">
+                        </div>
+                    </div>
+
+                    <div class="pFooter">
+                        <span><a routerLink="/cursos/1">Detalhes dos Cursos</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modal Structure - Tela Pagamento Aluno -->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <h5>Lista de Aulas</h5>
+        <hr>
+        <div class="row divModal">
+            <div class="col s12 m6 l6">
+                <ul class="collection">
+                    <li (click)="acao()" class="collection-item"><span class="new badge red">R$ 4</span>Alvin</li>
+                    <li class="collection-item"><span class="new badge light-green accent-4">Ok</span>Alvin</li>
+                    <li class="collection-item"><span class="new badge red">R$ 4</span>Alvin</li>
+                    <li class="collection-item"><span class="new badge light-green accent-4">Ok</span>Alvin</li>
+                    <li class="collection-item"><span class="new badge red">R$ 4</span>Alvin</li>
+                    <li class="collection-item"><span class="new badge light-green accent-4">Ok</span>Alvin</li>
+                    
+                </ul>
+            </div>
+
+            <div class="col s12 m6 l6">
+                <!-- id = idAula, valor, pago ou n, data vencimento, tipoPgto, qntParcelas -->
+                <p>Valor:</p>
+                <p>Data vencimento:</p>
+                <p>Tipo Pagamento:</p>
+                <!-- Se houver necessidade --> <p>Qnt Parcelas:</p>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a class="modal-close waves-effect waves-green btn-flat green btnOk">Ok</a>
+        <a class="modal-close waves-effect waves-green btn-flat red ">Cancelar</a>
+    </div>
+</div>

@@ -1,0 +1,301 @@
+<section class="alunosDevedores">
+  <div class="row rowGeral">
+    <div class="row">
+      <div class="col s12 m12 l12 divTitulo ">
+        <h4>Financeiro</h4>
+      </div>
+    </div>
+    <!-- Listagem dos Alunos  -->
+    <div class="col s12 m12 l7 divScroll">
+      <div class="scroll z-depth-3">
+        <table class="tabelaAluno striped" id="table">
+          <thead>
+            <tr class="thAluno">
+              <h5>Alunos</h5>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let aluno of subscribeAluno" (click)="selecionaAluno(aluno.codigo)">
+              <td class="tdFoto">
+                <div class="chip">
+                  <img src="../../../../assets/Gabriel.jpg" alt="Imagem do Aluno">
+                </div>
+              </td>
+
+              <td class="tdAluno">
+                {{ aluno.nome_aluno }}
+              </td>
+
+              <td class="tdDetalhe">
+                <span class="btn waves-effect waves-light  cyan darken-1">
+                  Detalhes
+                </span>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Div da Listagem e Detalhes de Alunos -->
+    <div class="col s12 m12 l5 divListaAluno z-depth-3 ">
+
+      <!-- Item de Ficar carregando a página -->
+      <div class="divCarregando" *ngIf="criarComponente == false">
+        <div class="preloader-wrapper big active">
+          <div class="spinner-layer spinner-blue-only">
+            <div class="circle-clipper left">
+              <div class="circle"></div>
+            </div>
+            <div class="gap-patch">
+              <div class="circle"></div>
+            </div>
+            <div class="circle-clipper right">
+              <div class="circle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tela em Si -->
+      <div class="row rowListaAluno indigo lighten-5" [hidden]="!criarComponente">
+        <div>
+          <h5> Detalhes do Aluno - <span>{{ nome }}</span> </h5>
+          <hr>
+        </div>
+
+        <!-- Div com as Abas -->
+        <div class="row rowAba">
+          <ul class="tabs" id="tab">
+            <li class="tab col s6" id="00"><a id="tab0" class="active" href="#detalheAluno">Detalhes</a></li>
+            <li class="tab col s6" id="11"><a id="tab1" href="#dadosAluno">Aulas</a></li>
+          </ul>
+        </div>
+
+        <!-- Div com os Detalhes do Aluno -->
+        <div class="col s12 detalheAluno" id="detalheAluno">
+
+          <div class="row rowDetalheAluno" *ngIf="alunoSelecionado != undefined">
+            <div class="col s6 m6 l6 divDetalheAluno">
+              <p>E-mail: <span> {{ alunoSelecionado.codigo }}</span></p>
+              <p>Nome: <span> {{ alunoSelecionado.nome_aluno }}</span></p>
+              <p>CPF: <span> {{ alunoSelecionado.cpf_aluno }}</span></p>
+              <p>Descrição: <span> {{ alunoSelecionado.descricao_aluno }}</span></p>
+            </div>
+
+            <div class="col s6 m6 l6 imgAlunoDetalhe">
+              <img class="z-depth-4" src="{{ alunoSelecionado.foto_aluno }}" alt="Imagem cadastrada do Aluno">
+            </div>
+          </div>
+
+          <p class="descEmail">Faça contato via e-mail com o aluno de maneira rápida e eficaz.</p>
+
+          <div class="row rowEnviaEmail">
+
+            <div class="col s9 m9 l9 ">
+              <div class="input-field col s12">
+                <i class="material-icons prefix">insert_comment</i>
+                <textarea id="mensagem_email" class="materialize-textarea"></textarea>
+                <label for="mensagem_email">Mensagem</label>
+              </div>
+            </div>
+
+            <div class="col s3 m3 l3 divBotao">
+              <button class="btn waves-effect waves-light btnEnviarEmail"
+                onClick="M.toast({html: 'E-mail enviado com sucesso'})">Enviar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Div com a Lista de Aulas do Aluno -->
+        <div class=" col s12 dadosAluno" id="dadosAluno">
+
+          <!-- Div com o Carregamento da pagina -->
+          <div class="divCarregando" *ngIf="criarTabela == false">
+            <div class="preloader-wrapper big active">
+              <div class="spinner-layer spinner-blue">
+                <div class="circle-clipper left">
+                  <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                  <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                  <div class="circle"></div>
+                </div>
+              </div>
+
+              <div class="spinner-layer spinner-red">
+                <div class="circle-clipper left">
+                  <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                  <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                  <div class="circle"></div>
+                </div>
+              </div>
+
+              <div class="spinner-layer spinner-yellow">
+                <div class="circle-clipper left">
+                  <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                  <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                  <div class="circle"></div>
+                </div>
+              </div>
+
+              <div class="spinner-layer spinner-green">
+                <div class="circle-clipper left">
+                  <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                  <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                  <div class="circle"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <table class="tabela" [hidden]="!criarTabela">
+            <thead>
+              <tr>
+                <th>Ref</th>
+                <th>Valor</th>
+                <th>Pago</th>
+                <th>Forma</th>
+                <th>Parcelas</th>
+                <th>Vencimento</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let aula of aulasSelecionadas" [ngClass]="aula.pagou_pagamento == 'Não'  ? 'fundo':''">
+                <td class="tdRef">{{ aula.dia }}</td>
+                <td class="tdValor">{{ aula.valor_aula_pagamento }}</td>
+                <td class="tdPago"
+                  [ngClass]="aula.pagou_pagamento == 'Não'  ? 'fundo1': ''"
+                  (click)="selecionarAula(aula.codigo, aula.pagou_pagamento)">
+                  {{ aula.pagou_pagamento }}</td>
+
+                <td class="tdForma">{{ aula.tipo_pagamento }}</td>
+                <td class="tdParcela">{{ aula.parcelas_pagamento }}</td>
+                <td class="tdVencimento">{{ aula.vencimento_pagamento }}</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <hr class="hr">
+
+          <!-- Area dos Botos no Rodape -->
+          <div class="rodapeAluno">
+
+            <button data-position="bottom" data-tooltip="Listar aulas não pagas" (click)="filtrarLista('Não')"
+              class="btn btn1 red waves-effect waves-light tooltipped">
+              Inadimplentes
+            </button>
+
+            <button data-position="bottom" data-tooltip="Listar aulas pagas" (click)="filtrarLista('Sim')"
+              class="btn btn2 green waves-effect waves-light tooltipped">
+              Pagos
+            </button>
+
+            <button data-position="bottom" data-tooltip="Atualizar lista"
+              (click)="filtrarLista( 'Todos' )"
+              class="btn btn3 blue waves-effect waves-light tooltipped">
+              Todas
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Gráficos ------------------------------------------------------------------------------------------------->
+<section class="alunosDevedores ">
+  <div class="row rowGeral center ">
+    <!-- Gráfico pie rendimentos por curso -->
+    <div class="col s12 m12 l6 divPieChart">
+      <h4>Rendimento mensal por curso</h4>
+      <div id="divCanvas" class="chartMargin">
+        <canvas id="pieChart" width="400" height="400"></canvas>
+        <button (click)="botao()">aqui</button>
+      </div>
+    </div>
+
+    <!-- Gráfico bars redimento mensal -->
+    <div class="col s12 m12 l6 divBarChart">
+      <h4>Créditos mensais</h4>
+      <div id="divCanvas" class="chartMargin">
+        <canvas id="barChart" width="400" height="400"></canvas>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal para a exclusao da Inadimplencia da Aula -->
+<div id="excluirInadimplencia" class="modal" *ngIf="alunoSelecionado != undefined">
+  <div class="modal-content">
+    <h5>Excluir Inadimplência do Aluno - <span>{{ alunoSelecionado.nome_aluno }}</span></h5>
+    <hr>
+    <form id="formulario">
+      <div class="row">
+
+        <div class="col s12 m6 l6">
+          <p>Dia da Aula: <span class="textoExclusao">{{ aulaSelecionada.dia }}</span></p>
+        </div>
+
+        <div class="col s12 m6 l6">
+          <p>Professor: <span class="textoExclusao">{{ aulaSelecionada.email_professor }}</span></p>
+        </div>
+
+        <div class="col s12 m6 l6">
+          <p>Valor: <span class="textoExclusao">R$ {{ aulaSelecionada.valor_aula_pagamento }}</span></p>
+        </div>
+
+        <div class="col s12 m6 l6">
+          <p>Descrição: <span class="textoExclusao">{{ aulaSelecionada.descricao_aula }}</span></p>
+        </div>
+
+        <div class="input-field col s12 m6 l6">
+          <select (change)="mudouSelect()" id="select" required>
+            <option value="" disabled selected>Selecione</option>
+            <option value="dinheiro">Dinheiro</option>
+            <option value="crédito">Crédito</option>
+            <option value="débito">Débito</option>
+          </select>
+          <label>Tipo de Pagamento</label>
+        </div>
+
+        <div class="input-field col s12 m6 l6" [hidden]="varParcelas != 'crédito'">
+          <input class="validate" value="0" type="number" min="1" max="3" name="parcelas" id="parcelas" required>
+          <label class="active " for="parcelas">Número de parcelas</label>
+        </div>
+
+        <div class="input-field col s12 m6 l6">
+          <input class="validate" id="datepicker" type="text" class="datepicker" id="datepicker" required>
+          <label for="datepicker" id="labelDp">Dia do Pagamento</label>
+        </div>
+
+        <div class="col s12 m6 l6 divBotoes">
+          <button class="modal-close btn waves-effect waves-light grey darken-1" type="reset"
+            id="reset">Cancelar</button>
+          <button class="btn waves-effect waves-light indigo lighten-2"
+            type="submit"
+            (click)="excluirInadimplencia()">Excluir</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

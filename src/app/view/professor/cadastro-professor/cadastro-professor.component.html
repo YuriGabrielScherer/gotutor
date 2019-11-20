@@ -1,0 +1,134 @@
+<section class="cadastroProfessor">
+    <h5>Cadastro Professor</h5>
+    <div class="row">
+        <form class="row " method="POST">
+            <div class="col s12 m12 l12">
+
+                <div class="col s12 m12 l6 ">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix" [ngClass]='{"active": professor_logado() }'>fingerprint</i>
+                            <input id="cpf_professor" type="text" class="validate" name="cpf_professor"
+                                [(ngModel)]="professor.cpf_professor" (blur)="validarCpf()"
+                                [textMask]="{mask: cpf_mask}">
+                            <span class="helper-text " *ngIf="!cpfValido">CPF inválido</span>
+                            <label for="cpf_professor" [ngClass]='{"active": professor_logado() }'>CPF</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix" [ngClass]='{"active": professor_logado() }'>account_circle</i>
+                            <input id="nome_professor" type="text" class="validate" name="nome_professor"
+                                [(ngModel)]="professor.nome_professor">
+                            <label for="nome_professor" [ngClass]='{"active": professor_logado() }'>Nome Completo</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix" [ngClass]='{"active": professor_logado() }'>email</i>
+                            <input id="email_professor" type="email" class="validate" name="codigo"
+                                [(ngModel)]="professor.codigo">
+                            <label for="email_professor" [ngClass]='{"active": professor_logado() }'>Email</label>
+                        </div>
+                    </div>
+ 
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix" [ngClass]='{"active": professor_logado() }'>lock</i>
+                            <input id="senha_professor" type="password" class="validate" name="senha_professor"
+                                [(ngModel)]="professor.senha_professor" (blur)="validaSenha()" [disabled]="professor_logado()">
+                            <label for="senha_professor" [ngClass]='{"active": professor_logado() }'>Senha</label>
+                        </div>
+                    </div>
+                    <div class="row" *ngIf="!professor_logado()">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">lock</i>
+                            <input id="conf_senha_professor" type="password" class="validate"
+                                name="conf_senha_professor" [(ngModel)]="confirma_senha" (blur)="validaSenha()">
+                            <label for="conf_senha_professor">Confirme a senha</label>
+                        </div>
+                    </div>
+                    <div class="row" *ngIf="professor_logado()">
+                        <div class="input-field col s12">
+                            <button class="btn modal-trigger" href="#modalAlterarSenha">Alterar minha senha</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col s12 m12 l6 divCadImagem ">
+
+                    <div class="row divEnviarFoto ">
+                        <div class="col s4"></div>
+                        <div class="btn col s4 btnSelecao">
+                            <label for='selecao-arquivo' class="label">
+                                Foto
+                            </label>
+                        </div>
+
+                        <div class="col s8">
+                            <!-- Este campo está invisivel -->
+                            <input #file type="file" accept='image/*' (change)="preview(file.files)"
+                                id="selecao-arquivo">
+                        </div>
+                    </div>
+
+                    <div class="row imagem ">
+                        <img [src]="imgURL" height="200" *ngIf="imgURL" class="preview " name="foto_professor"
+                            [(ngModel)]="professor.foto_professor" ngDefaultControl>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row col s12">
+                <button *ngIf="!professor_logado()" type="submit" class="btn waves-effect waves-light"
+                    (click)="cadastrarProfessor()">Cadastrar
+                    <i class="material-icons right">send</i></button>
+
+                <button *ngIf="professor_logado()" type="submit" class="btn waves-effect waves-light"
+                    (click)="alterarDadosProfessor()">Salvar
+                    <i class="material-icons right">send</i></button>
+
+                <button *ngIf="!professor_logado()" class="btn waves-effect waves-light red btnCancelar" (click)="cancelar()" type="reset"
+                    name="action">Cancelar
+                    <i class="material-icons  right">cancel</i>
+                </button>
+                <button *ngIf="professor_logado()" class="btn waves-effect waves-light red btnCancelar" routerLink="/administrativo"
+                    name="action">Voltar
+                    <i class="material-icons  right">cancel</i>
+                </button>
+            </div>
+
+        </form>
+    </div>
+    <div id="modalAlterarSenha" class="modal">
+        <div class="modal-content">
+            <div class="row modalCabecalho">
+                <div class="col s8 m8 l8">
+                    <h4>Alterar Senha</h4>
+                </div>
+                <div class="col s4 m4 l4 divBtn">
+                    <a class="modal-close waves-effect waves-light btn red lighten-2"><i
+                            class="material-icons left">close</i></a>
+                </div>
+            </div>
+            <div class="row" *ngIf="!digitouSenhaAntiga">
+                <div class="input-field col s12 m6 l6">
+                    <span>Digite sua senha antiga:</span>
+                    <input [(ngModel)]="senhaAntiga" type="text">
+                    <button class="btn" (click)="verificarSenhaAntiga()">Enviar</button>
+                </div>
+            </div>
+            <div class="row" *ngIf="digitouSenhaAntiga">
+                <div class="input-field col s12 m6 l6">
+                    <span>Digite sua nova senha:</span>
+                    <input [(ngModel)]="novaSenha" type="text">
+                    <button class="btn modal-close" (click)="definirNovaSenha()">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

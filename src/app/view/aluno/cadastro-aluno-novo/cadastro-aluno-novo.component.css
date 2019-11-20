@@ -1,0 +1,59 @@
+
+/* seção do cad professor */
+.cadastroAluno{
+    width: 75%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: rgba(243, 243, 243, 0.911);
+    border-radius: 3px;
+}
+
+.cadastroAluno h5{
+    text-align: center; 
+}
+
+/* Div do Form da Imagem */
+.divCadImagem{  
+    float: left; 
+    overflow: hidden;
+    /* background-color: purple; */
+}
+
+/* Div com Componentes para carregar a foto */
+.divEnviarFoto{
+    margin-top: 10px;
+    padding: 0px;
+}
+
+.label{
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+}
+
+.btnSelecao{
+    margin-top: 10px;
+    padding: 0px;
+}
+
+#selecao-arquivo{
+    display: none; 
+}
+
+/* Div do Preview da Imagem */
+.imagem{
+    min-height: 300px;
+    text-align: center;
+}
+
+.preview{
+    min-height: 290px;
+}
+
+
+/* Botoes Cancelar */
+.btnCancelar{
+    margin-left: 8px;
+}

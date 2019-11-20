@@ -1,0 +1,53 @@
+<section class="sectionContato">
+    <!-- div de informações para contato. -->
+    <div class="row divContato">
+        <div class="col s12 m12 l12">
+
+            <!-- email -->
+            <div class="input-field col s12 m6 l6 campoEmail">
+                <i class="material-icons prefix">email</i>
+                <input id="email" type="email" class="validate">
+                <label for="email">E-mail</label>
+            </div>
+
+            <!-- Assunto -->
+            <div class="input-field col s12 m6 l6 campoAssunto">
+                <i class="material-icons prefix">content_paste</i>
+                <input id="assunto" type="text" class="validate">
+                <label for="assunto">Assunto</label>
+            </div>
+        </div>
+
+        <!-- Dados da mensagem -->
+        <div class="col s12 m12 l12">
+
+
+            <div class="col s12 m6 l6">
+
+            </div>
+        </div>
+
+        <!-- Mensagem -->
+        <div class="col s12 m12 l12">
+            <div class="input-field col s12 m12 l12">
+                <i class="material-icons prefix">comment</i>
+                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                <label for="textarea1">Mensagem</label>
+            </div>
+        </div>
+
+        <!-- Botões enviar/cancelar -->
+        <div class="row col s12 divBtn">
+            <button type="submit" class="btn waves-effect waves-light" (click)="cadastrarProfessor()">Enviar
+                <i class="material-icons right">send</i></button>
+
+
+            <button class="btn waves-effect waves-light red btnCancelar" type="reset" name="action"
+            (click)="cancelar()">Cancelar
+                <i class="material-icons  right">cancel</i>
+            </button>
+        </div>
+    </div>
+
+
+</section>

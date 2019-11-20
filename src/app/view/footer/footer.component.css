@@ -1,0 +1,46 @@
+.footer-copyright{
+    text-align: center;
+}
+/* 
+footer{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+} */
+.container{
+    width: 100%;
+}
+.imgSocial{
+    width: 28px;
+    margin-left: 10px;
+    background-color: #3949AB;
+}
+.divFinal{
+    margin: 0px!important;
+}
+.text{
+    margin-top: -20px!important;
+    color: white;
+    font-size: 15px;
+}
+.portugues i{
+    line-height: 8;
+    font-size: 15px;
+}
+.portugues{
+    margin-left: 20px;
+    line-height: 0;
+}
+.mapa{
+    line-height: 2;
+}
+
+.alinharTexto{
+    text-align: center;
+    line-height: 2;
+}
+.container2{
+    width: 50%;
+    margin-left: -130px;
+}

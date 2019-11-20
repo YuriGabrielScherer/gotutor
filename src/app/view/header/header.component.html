@@ -1,0 +1,62 @@
+<div class="navbar-fixed">
+    <nav>
+        <div class="row nav-wrapper indigo">
+            <a data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <a class="col s1 m1 l1 imagem" routerLink="home"><img class=" logo" src="../assets/icone3.png"
+                    title="Home"></a>
+            <h5 class="col s2 m2 l1 alinhar">GoTutor</h5>
+            <!-- <a href="../login">
+                <marquee class="textCorrido" behavior="scroll" direction="left">
+                    Confira as novidades que a GoTutor trouxe para você! Clique aqui para executar um cadastro.
+                </marquee>
+            </a> -->
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a class="btn btn-5" routerLink="home">Início</a></li>
+
+                <li><a class="btn btn-5" routerLink="institucional">Sobre</a></li>
+
+                <li *ngIf="usuario_deslogado()" class="liBtn"><a class="btn btn-5" routerLink="login">Login</a></li>
+
+                <li *ngIf="usuario_deslogado()" class="criarConta liBtn"><a class="btn btn-5" routerLink="escolher-cadastro">Criar conta</a></li>
+
+                <li *ngIf="professor_logado()"><a class="btn btn-5 " routerLink="financeiro">Financeiro</a></li>
+
+                <li *ngIf="professor_logado()"><a class="btn btn-5" routerLink="listarAlunos">Meus alunos</a></li>
+
+                <li *ngIf="usuario_logado()"><a class="btn btn-5" routerLink="cursos">Cursos</a></li>
+
+                <li *ngIf="usuario_logado()"><a class="btn btn-5" routerLink="calendario">Calendário de aulas</a></li>
+
+                <li *ngIf="usuario_logado()"><a (click)="painel_administrativo()">
+                        <div class="chip transparent"><img [src]="usuario_foto"><span>{{ usuario_nome }}</span></div>
+                    </a></li>
+
+                <li *ngIf="usuario_logado()"><a class="btn btn-5" (click)='deslogar()'>Sair</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<ul class="sidenav" id="mobile-nav">
+    <li *ngIf="usuario_logado()"><a (click)="painel_administrativo()">
+            <div class="chip transparent"><img [src]="usuario_foto"></div><span>{{ usuario_nome }}</span>
+        </a></li>
+
+    <li><a routerLink="home">Início</a></li>
+
+    <li><a routerLink="home">Sobre</a></li>
+
+    <li *ngIf="usuario_deslogado()"><a routerLink="login">Login</a></li>
+
+    <li *ngIf="usuario_deslogado()" class="criarConta"><a routerLink="escolher-cadastro">Criar conta</a></li>
+
+    <li *ngIf="professor_logado()"><a routerLink="alunosDevedores">Alunos devedores</a></li>
+
+    <li *ngIf="professor_logado()"><a routerLink="listarAlunos">Meus alunos</a></li>
+
+    <li *ngIf="usuario_logado()"><a routerLink="cursos">Cursos</a></li>
+
+    <li *ngIf="usuario_logado()"><a routerLink="calendario">Calendário de aulas</a></li>
+
+    <li *ngIf="usuario_logado()"><a (click)='deslogar()'>Sair</a></li>
+</ul>

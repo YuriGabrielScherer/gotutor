@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "../node_modules/materialize-css/dist/css/materialize.css";
+@import '~@fullcalendar/core/main.css';
+@import "~fullcalendar/dist/fullcalendar.css";
+@import '~@fullcalendar/daygrid/main.css';
+@import '~@fullcalendar/list/main.css';
+@import '~@fullcalendar/timegrid/main.css';
+@import '~@fullcalendar/bootstrap/main.css';
+@import "../node_modules/chart.js/dist/Chart.min.css";
+.fc-icon {
+    height: 100%;
+    margin: 0;
+}
+
+html, body {
+    height: 100%!important;
+}
+
+body {
+    background-image: url("./assets/fundo.jpg");
+}
+
+main {
+    flex: 1 0 auto;
+    min-height: 58.2vh;
+}
+
+.evento {
+    background-color: #bbdefb !important;
+}
+
+.texto-titulo {
+    font-size: 25px;
+}
+
+a {
+    color: black;
+}
+
+.centrao {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    min-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.btnLineHeight {
+    line-height: 0px;
+    display: inline-flex;
+}
+

@@ -1,0 +1,75 @@
+/* Estilizando a secao de Listar Alunos */
+.listarAlunos{
+    width: 100%;
+    min-height: 470px;
+    margin-top: 20px;
+}
+
+/* Topo com o Titulo */
+.topo{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/* Estilizando a Div da Table */
+.table{
+    padding: 0px;
+}
+.chk_inadimplente{
+    text-align: center;
+    margin-top: 10px;
+}
+.div_geral{
+    width: 90%;
+    border: 2px;
+    padding: 15px;
+    background-color: rgba(243, 243, 243, 0.911);
+    border-radius: 3px;
+}
+.detalhes_alunos{
+    border-top: 2px solid #9e9e9e;
+}
+#selecao-arquivo{
+    display: none; 
+}
+.divCadImagem{  
+    float: right; 
+    overflow: hidden;
+}
+/* Modal de Alteracao do Usuario*/
+.divBtn{
+    margin-top: 8px; 
+}
+.divBtn a {
+    float: right;
+}
+.divBtn i{
+    margin: 0;
+}
+
+.btn1{
+    margin-right: 20px;
+}
+
+/* Div de Inadimplencia */
+.collapsible-header, .collapsible-body{
+    padding: 0px!important;
+}
+.collapsible-header{
+    line-height: 3!important;
+}
+.collapsible-body p{
+    padding: 1rem!important;
+}
+.icon{
+    margin-left: 10px;
+}
+
+.nome_aluno{
+    display: none;
+}
+
+.pontilhado{
+    border: 2px dotted black
+}

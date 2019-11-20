@@ -1,0 +1,184 @@
+<!-- Secao de Listar Alunos -->
+<section class="listarAlunos">
+    <!-- Div para compreender tudo -->
+    <div class="row div_geral">
+        <div class="row topo flow-text">
+            <span class="card-title">Alunos Cadastrados no Banco de Dados</span>
+        </div>
+
+        <!-- Div da Tabela -->
+        <div class="table row">
+            <!-- Tabela em Si -->
+            <table class="col s9 centered striped ">
+                <thead>
+                    <tr>
+                        <th>CPF</th>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Situação</th>
+                        <th>Alterar</th>
+                        <th>Excluir</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tabela_alunos">
+                    <tr *ngFor="let aluno_tabela of alunos">
+                        <td>{{ aluno_tabela.cpf_aluno  }}</td>
+                        <td>{{ aluno_tabela.nome_aluno }}</td>
+                        <td>{{ aluno_tabela.codigo }}</td>
+                        <td *ngIf="aluno_tabela.situacao_aluno">Inadimplente</td>
+                        <td *ngIf="!aluno_tabela.situacao_aluno">Adimplente</td>
+                        <td><a class="btn modal-trigger" (click)="retornarAluno(aluno_tabela)"
+                                href="#modalAlteracao">Alterar</a></td>
+                        <td><a class="btn red" (click)='deletarAluno(aluno_tabela.codigo)'>Excluir</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="col s3">
+                <div class="card indigo lighten-5">
+                    <div class="card-content">
+                        <span class="card-title">Procurar aluno</span>
+                        <p>Clique abaixo para adicionar algum aluno para sua lista.</p>
+                    </div>
+                    <div class="card-action">
+                        <a class="modal-trigger" href="#modalAddAluno">Adicionar aluno</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="modalEmailAluno" class="modal">
+            <div class="modal-content">
+                <div class="row modalCabecalho">
+                    <div class="col s8 m8 l8">
+                        <h4>Aluno não se cadastrou</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <p>
+                            Este aluno não consta como cadastrado no banco de dados!
+                        </p>
+                        <p>
+                            Um email com um convite de cadastro foi enviado para o aluno.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a class="modal-close waves-effect waves-light btn">OK</a>
+            </div>
+        </div>
+
+
+
+    </div>
+</section>
+
+<!-- Modal de Cadastrar Aluno -->
+<div id="modalAddAluno" class="modal">
+    <div class="modal-content">
+        <div class="row modalCabecalho">
+            <div class="col s8 m8 l8">
+                <h4>Adicionar aluno</h4>
+            </div>
+            <div class="col s4 m4 l4 divBtn">
+                <a class="modal-close waves-effect waves-light btn red lighten-2"><i
+                        class="material-icons left">close</i></a>
+            </div>
+        </div>
+        <form class="cadastroAluno">
+            <div class="row">
+                <div class="col s9">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">email</i>
+                            <input id="email_aluno" type="text" class="validate autocomplete" name="codigo"
+                                [(ngModel)]="adicionar_aluno.codigo">
+                            <label for="email_aluno_autocomplete">Email do aluno</label>
+                        </div>
+                        <button class="btn">Enviar</button>
+                    </div>
+                    <div class="row nome_aluno">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input id="nome_aluno" type="text" class="" name="nome_aluno"
+                                [(ngModel)]="adicionar_aluno.nome_aluno">
+                            <label for="nome_aluno">Digite o nome do aluno</label>
+                            <span>Este aluno não consta como cadastrado no banco de dados!</span>
+                            <span>Um email com um convite de cadastro foi enviado para o aluno.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Modal Structure de Alteração do Aluno -->
+<div id="modalAlteracao" class="modal">
+    <div class="modal-content">
+        <div class="row">
+            <div class="col s8 m8 l8">
+                <h5>Alterar dados do Aluno</h5>
+            </div>
+            <div class="col s4 m4 l4 divBtn">
+                <button id="fecharModal" class="modal-close waves-effect waves-light btn red "><i class="material-icons left">close</i></button>
+            </div>
+        </div>
+        <hr>
+        <form class="telaDetalhesAluno">
+            <div class="row">
+                <div class="row">
+                    <div class="input-field col s12 m6 l6 ">
+                        <span>CPF</span>
+                        <input name="cpf_aluno" type="text" class="validate" [(ngModel)]="alterar_aluno.cpf_aluno"
+                            disabled>
+                    </div>
+
+                    <div class="input-field col s12 m6 l6 ">
+                        <span>Nome</span>
+                        <input name="nome_aluno" type="text" class="validate" [(ngModel)]="alterar_aluno.nome_aluno"
+                            disabled>
+                    </div>
+                </div>
+
+                <div class="row ">
+                    <div class="input-field col s12 m6 l6 ">
+                        <span>Email</span>
+                        <input name="email_aluno" type="text" class="validate" [(ngModel)]="alterar_aluno.codigo"
+                            disabled>
+                    </div>
+
+                    <div class="input-field col s12 m6 l6 ">
+                        <span>Senha</span>
+                        <input name="senha_aluno" type="password" class="validate"
+                            [(ngModel)]="alterar_aluno.senha_aluno" disabled>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12 m6 l6  ">
+                        <span>Aluno Inadimplente</span>
+                        <div class="input-field">
+                            <a class="btn waves-effect waves-light blue" routerLink="/financeiro">Tela Financeiro</a>
+                        </div>
+                    </div>
+
+                    <div class="input-field col s12 m6 l6 ">
+                        <span>Descrição</span>
+                        <textarea name="descricao_aluno" type="text" class="materialize-textarea validate"
+                            [(ngModel)]="alterar_aluno.descricao_aluno"></textarea>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+        <div class="row footerAlteracao">
+            <a class="btn btn1 green lighten-1" (click)="alterarAluno()">Alterar</a>
+            <a class="btn  red lighten-2" (click)='deletarAluno(alterar_aluno.codigo)'>Deletar</a>
+        </div>
+    </div>
+</div>

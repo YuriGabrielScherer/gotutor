@@ -1,0 +1,30 @@
+<form>
+  <div class="row telaLogin">
+    <div class="row divLogin">
+      <div class="input-field col s12 ">
+        <i class="material-icons prefix">email</i>
+        <input id="email_login_aluno" type="text" class="validate" name="email" [(ngModel)]="email">
+        <label for="email_login_aluno">Email</label>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">lock</i>
+          <input id="senha_login_aluno" type="password" class="validate" name="senha" [(ngModel)]="senha">
+          <label for="senha_login_aluno">Senha</label>
+          <a routerLink='esqueceuSenha'>Esqueceu a senha?</a>
+        </div>
+      </div>
+      <div class="row s6 ">
+        <button class="btn waves-effect waves-light btnLogin" type="button" name="action"
+          (click)="verificarLogin()">Entrar
+          <i class="material-icons right iconeBtnLogin">send</i>
+        </button>
+      </div>
+      <label><input class="chk_lembrar" type="checkbox" (click)="lembrar_de_mim_funcao()"><span>Lembrar de mim</span></label>
+      <div class="progress">
+        <div class="indeterminate"></div>
+      </div>
+    </div>
+  </div>
+</form>

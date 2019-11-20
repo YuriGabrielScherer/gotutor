@@ -1,0 +1,56 @@
+<app-calendario-aulas
+    [appointments]="appointments"
+    [professoresLista]="professoresLista"
+    [alunoLogado]="alunoLogado"
+    [carregou]="carregou"
+    [professor]="professor"
+    (requestNewAppointment)="onRequestNewAppointment($event)"
+    (requestUpdateAppointment)="onRequestUpdateAppointment($event)"
+    (appointmentUpdated)="onAppointmentUpdated($event)"
+    (enviarSemAula)="receberSemAula($event)"
+    (enviarProfessorSelecionado)="receberProfessorSelecionado($event)"
+    >
+</app-calendario-aulas>
+
+<div class="centrao" [hidden]="semAula" *ngIf="appointmentDetail">
+    <app-appointment-detail
+        [cursos]="cursos"
+        [alunos]="alunos"
+        [semAula]="semAula"
+        [alunoLogado]="alunoLogado"
+        [hidden]="semAula"
+        *ngIf="appointmentDetail"
+        [isNew]="isNew"
+        [appointment]="appointmentDetail"
+        (add)="onAdd($event)"
+        (update)="onUpdate($event)"
+        (close)="onCloseAppointmentDetail()"
+        (abrirConfirmacao)="onAbrirConfirmacao($event)"
+        [alunoLogado]="alunoLogado"
+        >
+    </app-appointment-detail>
+</div>
+
+<!-- Modal Confirmção Exclusão Aula -->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+            <div class="divTitulo">
+                    <h4>Confirmação</h4>
+            </div>
+
+            <div class="col s12 divCentral ">
+                <hr>
+                <div class="row rowCentral ">
+                    <div class="col s12 m12 l12 ">
+                    Você tem certeza que deseja excluir esta aula?
+                    </div>
+                </div>
+            </div>
+
+        <div class="modal-footer">
+            <button class="btn waves-effect waves-light red" (click)="onUpdate( appointmentDetail )">Sim</button>
+            <button class="btn waves-effect waves-light blue" (click)="onCloseAppointmentDetail()">Não</button>
+        </div>
+
+    </div>
+</div>

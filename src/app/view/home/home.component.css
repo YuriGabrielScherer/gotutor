@@ -1,0 +1,120 @@
+
+/* Parte Inicial Logo e Slogan */
+.divLogo, .img{
+    /* max-height: 250px; */
+    margin: 0px;
+    margin-block-end: 0px!important;
+    margin-top: 30px!important;
+    text-align: center; 
+    margin-block-end: 50px;
+    width: 70%
+}
+
+.slogan{
+    text-align: center;
+    /* min-height:250px; */
+    padding: 50px;
+    margin-top: 40px!important;
+}
+.rowSlogan{
+    margin: 0px;
+    margin-block-end: 120px!important;
+}
+
+.barrinha{
+    border-block-end: solid 1px rgb(154,154,154);
+}
+.divTitle{
+    margin-block-end: 100px;
+    
+}
+.divApresentacaoInfo{
+    text-align: center;
+}
+.divGestao{
+    margin-block-end: 80px;
+}
+.hr{
+    width: 85%;
+}
+.home {
+    background-color: rgba(255, 255, 255, 0.952);
+    width: 100%;
+    padding: 0px;
+    margin: none;
+}
+.geralHome {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 30px;
+}
+
+h5 {
+    max-width: 200px;
+    color: #000000;
+    margin: -16, 4, 0, 0, 0;
+}
+
+.primeirosDados {
+    border: solid 1px #000000;
+}
+
+.titulo {
+    font-size: 50px;
+    text-align: center;
+    margin-block-end: -20px;
+}
+
+.card-panel {
+    min-height: 280px;
+}
+
+.gestao {
+    text-align: center;
+}
+
+.texto1 {
+    font-size: 17px;
+    text-align: center;
+}
+
+.divTexto {
+    width: 80%;
+    margin-left: 10%;
+}
+
+.segundoBloco {
+    margin-top: 100px;
+}
+
+.textCard {
+    text-align: justify;
+}
+
+.imgBloco1 {
+    width: 160px;
+}
+
+.textoVideo {
+    width: 100%;
+
+}
+.divRowVideo{
+    margin-block-end: 80px; 
+    margin-top: 80px; 
+    margin-left: 10%; 
+    margin-right: 10%;
+}
+.divVideo{
+    text-align: center;
+}
+.video {
+    border-radius: 5px;
+}
+.deixarBranco{
+    height: 40px; 
+    margin-block-end: -20px;
+}
+
+
+

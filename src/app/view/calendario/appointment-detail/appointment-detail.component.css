@@ -1,0 +1,41 @@
+:host {
+    background: #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index:9;
+    padding: 10px;
+    border: 2px solid #ccc;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .select-cursos{
+    display: inline-block;
+    border: 1px solid rgb(163,163,163);
+    font-size: 15px;
+  }
+
+  .select-cursos:focus {
+    border: 3px solid rgb(80,169,160);
+  }
+
+  label {
+    font-size: 14px;
+  }
+
+  button {
+    margin: 5px;
+  }
+  .appointmentForm{
+    width: 600px;
+  }
+  #aluno-span, #curso-span, #local-span, #start-span, #end-span{
+    color: red;
+    display: none;
+  }
+
+  input[type="time"]::-webkit-clear-button {
+    display: none;
+  }

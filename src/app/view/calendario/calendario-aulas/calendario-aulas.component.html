@@ -1,0 +1,23 @@
+<section class="calendarioSection z-depth-2">
+    <div class="row" *ngIf="alunoLogado">
+        <div class="col s3">
+            <div class="row">
+                <div class="col s12">
+                    <span>Visualizar o calendário do professor:</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <select id="select">
+                        
+                    </select>
+                    <label>Selecione um professor</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Calendário -->
+    <div class="row">
+        <div #calendar class="calendario z-depth-3"></div>
+    </div>
+</section>

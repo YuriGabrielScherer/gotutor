@@ -1,0 +1,203 @@
+<!-- Tela Principal -->
+<section class="divCursos">
+    <div class="container">
+        <div class="row">
+            <h5 class="header">Cursos Oferecidos</h5>
+            <hr>
+        </div>
+    </div>
+
+    <div class="container divContainer indigo lighten-5 ">
+        <div class="row divRowContainer">
+            <!-- Carregamento da Pagina -->
+            <div class="divCarregando" *ngIf="!carregamentoCurso">
+                <div class="preloader-wrapper big active">
+                    <div class="spinner-layer spinner-blue">
+                        <div class="circle-clipper left">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="gap-patch">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="circle-clipper right">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+
+                    <div class="spinner-layer spinner-red">
+                        <div class="circle-clipper left">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="gap-patch">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="circle-clipper right">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+
+                    <div class="spinner-layer spinner-yellow">
+                        <div class="circle-clipper left">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="gap-patch">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="circle-clipper right">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+
+                    <div class="spinner-layer spinner-green">
+                        <div class="circle-clipper left">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="gap-patch">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="circle-clipper right">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Local para Selecionar o Professor e Curso -->
+            <div class="col s12 m12 l6 indigo lighten-5 divGrid1" [hidden]="!carregamentoCurso">
+                <div class="input-field col s12 m12 l12" *ngIf="!profLogado">
+                    <select id="select" (change)="selecionaSelect()">
+
+                    </select>
+                    <label>Selecione o seu professor</label>
+                </div>
+
+                <div class="col s12 m12 l12 divListaCursos ">
+                    <table class="table">
+                        <tbody>
+                            <!-- Populando a lista de Cursos com base na selecao do ComboBox -->
+                            <tr *ngFor="let curso of subscribeCursos">
+                                <td (click)="selecionaCurso( curso.codigo )">
+                                    {{ curso.nome_curso }}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+            <!-- Local para Mostrar Detalhe Curso -->
+            <div class="col s12 m12 l6 divRotaFilha">
+                <div class="row">
+
+                    <!-- Div de Detalhes do Curso -->
+                    <div class="col s12" *ngIf="carregamentoCurso">
+                        <h5>Descrição do Curso - {{ cursoSelecionado.nome_curso }}</h5>
+                        <hr>
+                        <blockquote class="quebrarLinha">
+                            <p>{{ cursoSelecionado.descricao_curso }}</p>
+                        </blockquote>
+
+                        <blockquote>
+                            R$ {{ cursoSelecionado.preco_hora_aula }}
+                        </blockquote>
+                        <br>
+                        <a class="waves-effect waves-light btn" routerLink="/calendario" *ngIf="!profLogado">
+                            <i class="material-icons left">date_range</i>
+                            Agende uma aula agora mesmo
+                        </a>
+
+                        <button class="btn waves-effect waves-light blue"
+                            (click)="prepAlterar('cursoSelecionado.codigo')" *ngIf="profLogado">
+                            <i class="material-icons left">create</i>
+                            Alterar
+                        </button>
+
+                        <button *ngIf="profLogado" class="btn btnExcluir waves-effect waves-light blue-grey lighten-2"
+                            (click)="excluir(cursoSelecionado)">
+                            <i class="material-icons left">delete</i>
+                            Excluir
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row rowCarregamento" *ngIf="carregamentoExclusao">
+            <div class="progress">
+                <div class="indeterminate"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Aqui vai o NgIf -->
+    <div *ngIf="profLogado">
+        <div class="container">
+            <div class="row">
+                <h5 class="header">Cadastre um novo curso</h5>
+                <hr>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+
+                <!-- Cadastro de Novos Cursos -->
+                <form id="formulario">
+                    <div class="col s12 m12 l6">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">layers</i>
+                            <input id="nome_curso" name="nome_curso" type="text" class="validate" [(ngModel)]="curso.nome_curso">
+                            <label id="label_nome" for="nome_curso">Nome Curso</label>
+                        </div>
+                    </div>
+                    <div class="col s12 m12 l6">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">attach_money</i>
+                            <input id="valor_curso" name="valor_curso" type="text" class="validate valid" [textMask]="{mask: valor_mask}"
+                                value="000,00"
+                                [(ngModel)]="curso.preco_hora_aula">
+                            <label id="label_valor" for="valor_curso" class="active">Valor por Hora</label>
+                        </div>
+                    </div>
+                    <div class="col s12 m12 l12">
+                        <div class="input-field col s12 m12 l6">
+                            <i class="material-icons prefix">assignment</i>
+                            <textarea id="desc_curso" name="desc_curso" class="materialize-textarea" [(ngModel)]="curso.descricao_curso"></textarea>
+                            <label id="label_desc" for="desc_curso">Descrição do Curso</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 m6 l6">
+                            <button class="btn waves-effect waves-light" *ngIf="!modoAlterar" (click)="cadastrar()">
+                                Cadastrar</button>
+
+                            <button class="btn waves-effect waves-light pink" *ngIf="modoAlterar" (click)="alterar()">
+                                Alterar</button>
+
+                            <button class="btn waves-effect waves-light red btnCancelar"
+                                (click)="cancelar()">Cancelar</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<!-- Modal Structure -->
+<div id="modalConfirmacao" class="modal">
+    <div class="modal-content ">
+        <h5>Confirmação de exclusão</h5>
+        <hr>
+        <div class="row ">
+            <p><span>O curso <strong>{{ cursoSelecionado.nome_curso }}</strong> possui ligações com aulas registradas no banco de dados.</span></p>
+            <p><span>Você tem certeza que deseja excluir o curso?</span></p>
+        </div>
+    </div>
+    <div class="modal-footer ">
+        <button class="btn waves-effect waves-light green" (click)="excluir2(cursoSelecionado)">Excluir</button>
+
+        <button class="btn waves-effect waves-light red modal-close">Cancelar</button>
+    </div>
+</div>

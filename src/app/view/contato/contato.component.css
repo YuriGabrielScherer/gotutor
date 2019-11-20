@@ -1,0 +1,24 @@
+/* Criar fundo Branco personalizado */
+.divContato{
+    width: 75%;
+    margin: auto;
+    margin-top: 50px;    
+    background-color: rgba(247, 245, 245, 0.952);
+    padding: 15px;
+    border-radius: 3px;
+    /* border: solid 1px #000000; */
+}
+/* Definindo margem para os campos */
+
+.campoEmail{
+    margin-left: 15px;
+}
+.campoAssunto{
+    margin-left: 10px;
+}
+.btnCancelar{
+    margin-left: 8px;
+}
+.divBtn{
+    margin-top: 20px;
+}

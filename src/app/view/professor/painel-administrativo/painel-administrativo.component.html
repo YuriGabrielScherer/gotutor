@@ -1,0 +1,158 @@
+<section class="telaAdministrativa">
+    <div class="row rowAdmin ">
+        <!-- Div com Foto e Detalhes Professor -->
+        <div class="col s12 m12 l12 divCentral ">
+            <div class="row rowCentral ">
+                <div class="col s6 m6 l3 divFoto">
+                    <div class="row divImagem">
+                        <!-- <img class="imagem z-depth-3 " src="../../../../assets/professores/felipe.jpg" alt="Imagem do Professor"> -->
+                        <img class="imagem z-depth-3 " src="{{ professor.foto_professor }}" alt="Imagem do Professor">
+                    </div>
+                    <div class="row subImagem ">
+                        <label>{{ professor.nome_professor }}</label>
+                    </div>
+                </div>
+                <div class="col s12 m12 l3 bemVindo ">
+                    <blockquote>
+                        Professor <strong>{{ professor.nome_professor }}</strong>, bem-vindo!
+                    </blockquote>
+                    <blockquote>
+                       Data: <strong>{{ dataAtual }}.</strong>
+                    </blockquote>
+                    <blockquote>
+                        <a class="modal-trigger" href="#modal1">Próxima aula</a> - {{ proximaAula }}
+                    </blockquote>
+                </div>
+                <div class="col s12 m12 l6 divImgUni ">
+                    <div class="divTextoUniversidade ">
+                        <!-- <span>Colocar algum texto legal</span> -->
+                    </div>
+                    <div class="divImgUniversidade">
+                        <img class="imgUniversidade" src="../../../../assets/administrativo/universidade.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Container com Links para o professor -->
+    <div class="container">
+        <div class="row ">
+
+            <div class="col s12 m12 l12">
+                <div class="col s12 colTabela">
+                    <ul class="tabs tabela">
+                        <li class="tab col s4"><a href="#aluno">Aluno</a></li>
+                        <li class="tab col s4"><a href="#professor">Professor</a></li>
+                        <li class="tab col s4"><a href="#curso">Cursos</a></li>
+                    </ul>
+                </div>
+
+                <!-- Div com os links e informacoes do Aluno -->
+                <div id="aluno" class=" row rowTab ">
+                    <div class="col s12 m6 l8 divLinksAluno  ">
+                        <div class="col s12 m6 l6  divSpan   ">
+                            <a class="btnAluno btnAluno-5" routerLink="/listarAlunos">Alunos Cadastrados</a>
+                        </div>
+                        <div class="col s12 m6 l6 divSpan  ">
+                            <a class="btnAluno btnAluno-5" routerLink="/listarAlunos">Cadastrar novo Aluno</a>
+                        </div>
+                        <div class="col s12 m6 l6 divSpan  ">
+                            <a class="btnAluno btnAluno-5" routerLink="/financeiro">Alunos inadimplentes</a>
+                        </div>
+                        <div class="col s12 m6 l6 divSpan  ">
+                            <a class="btnAluno btnAluno-5" routerLink="">Enviar e-mail para alunos</a>
+                        </div>
+
+                    </div>
+                    <div class="col s12 m6 l4 divImgAluno ">
+                        <img class="imgAluno" src="../../../assets/administrativo/student.png">
+                    </div>
+                </div>
+
+                <!-- Div com as informacoes do Professor -->
+                <div id="professor" class="row rowTab">
+                    <div class="col s12 m6 l8 divLinksAluno  ">
+                        <div class="col s12 m6 l6  divSpan   ">
+                            <a class="btnAluno btnAluno-5" routerLink="/cadProfessor">Alterar Dados</a>
+                        </div>
+                        <div class="col s12 m6 l6 divSpan  ">
+                            <a class="btnAluno btnAluno-5" routerLink="/listarAlunos">Financeiro</a>
+                        </div>
+                        <div class="col s12 m6 l6 divSpan  ">
+                            <a class="btnAluno btnAluno-5" routerLink="/financeiro">Calendário de Aulas</a>
+                        </div>
+
+                    </div>
+                    <div class="col s12 m6 l4 divImgAluno ">
+                        <img class="imgAluno" src="../../../assets/administrativo/prof.png">
+                    </div>
+
+                </div>
+
+                <!--   -->
+                <div id="curso" class="row rowTab">
+                    <div class="col s12 m6 l8 divLinksAluno  ">
+                        <div class="col s12 m6 l6  divSpan   ">
+                            <a class="btnAluno btnAluno-5" routerLink="/cursos">Cursos cadastrados</a>
+                        </div>
+                        <div class="col s12 m6 l6 divSpan  ">
+                            <a class="btnAluno btnAluno-5" routerLink="/cursos">Listar cursos</a>
+                        </div>
+                        <div class="col s12 m6 l6 divSpan  ">
+                            <a class="btnAluno btnAluno-5" routerLink="/financeiro">Cursos mais lucrativos</a>
+                        </div>
+                        <div class="col s12 m6 l6 divSpan  ">
+                            <a class="btnAluno btnAluno-5" routerLink="/calendario">Próxima aula</a>
+                        </div>
+
+                    </div>
+                    <div class="col s12 m6 l4 divImgAluno ">
+                        <img class="imgAluno" src="../../../assets/administrativo/cursos.png">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Modal -->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <h5>Detalhes da Próxima Aula</h5>
+        <hr>
+
+        <div class="row rowModal ">
+            <!-- Div com Informações -->
+            <div class="col s12 m6 l6 ">
+                <p class="detalheModal ">Data: <span>Dia / Mês / Ano</span></p>
+                <p class="detalheModal">Matéria: <span>matériaAula</span></p>
+                <p class="detalheModal">Horário:</p>
+                <p class="detalheModal">Local: <span> Rua das nao sei, 12345</span></p>
+
+            </div>
+
+            <!-- Div com imagem do Aluno -->
+            <div class="col s12 m6 l6 divImagemModal ">
+                <div class="divNomeAlunoModal ">
+                    <p><span class="detalheModal ">nomeAluno</span></p>
+                </div>
+                <div class="">
+                    <img class="imagem z-depth-3 " src="../../../../assets/Vini.jfif"
+                        alt="Imagem do Professor ">
+                </div>
+            </div>
+        </div>
+
+        <!-- Div com os botoes -->
+        <div class="row rowBotoes">
+            <a class="modal-close btn waves-effect indigo lighten-2 ">Ok</a>
+            <button class="btn waves-effect waves-light red btnCancelarAula " name="action " (click)="cancelarAula() ">
+                Cancelar aula
+            </button>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,85 @@
+.institucional-titulo{
+    font-size: 40px;
+    text-align: center;
+    margin: 50px;
+}
+
+.institucional-imagem{
+    // width: 70%;
+    // max-width: 300px;
+    max-height: 280px;
+    border: 2px solid black;
+    border-radius: 2px;
+}
+.rowImg{
+    text-align: center;
+}
+.carousel-item{
+    margin-top: 5%;
+    width: 70%;
+    height: 100%;
+}
+
+// Card Texto
+.card-title{
+    font-weight: bold;
+}
+
+// Carousel
+.carousel{
+    border: 2px black solid;
+    border-radius: 5px;
+}
+.fundo{
+    background-color: white;
+}
+.borda{
+    margin-top: 3px;
+    border-top: solid 1px #00000031;
+}
+.conteudo{
+    text-align: center;
+    margin-top: 20px;
+}
+.conteudo p{
+    margin-block-end: 20px;
+}
+.conteudo a{
+    width: 80%;
+    height: 50px;
+}
+.img1{
+    margin-left: 20%;
+}
+.img2{
+    margin-left: none;
+}
+.img3{
+    margin-left: 23%;
+}
+.btn2{
+    margin-top: 15px;
+}
+
+// Botoes Flutuando
+.menu {
+    position: fixed;
+    left: 20px;
+    top: 95%;
+    width: 8em;
+    margin-top: -2.5em;
+}
+
+
+// Criando validação para visualização do botão
+
+@media (max-width:600px) {
+    .btn1{
+        display: none;
+    }
+}
+@media (min-width:601px) {
+    .btn2{
+        display: none;
+    }
+}

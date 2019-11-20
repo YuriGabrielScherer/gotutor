@@ -1,0 +1,97 @@
+<section class="cadastroAluno">
+    <h5>Cadastro Aluno</h5>
+    <div class="row">
+        <form class="col s12" method="POST">
+            <div class="col s12">
+                <div class="col s12 m12 l6 ">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">fingerprint</i>
+
+                            <!-- Usando a Class.active="edicao" -->
+                            <!-- Isso significa que atribuirá a classe active se a condicao (edicao)==true  -->
+                            <input id="cpf_aluno" name="cpf_aluno" type="text" class="validate"
+                                [(ngModel)]="aluno.cpf_aluno" (blur)="validarCpf()" required
+                                [textMask]="{mask: cpf_mask}">
+                            <span class="helper-text " *ngIf="!cpfValido">CPF inválido</span>
+
+                            <label for="cpf_aluno">CPF</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input id="nome_aluno" type="text" class="validate" name="nome_aluno"
+                                [(ngModel)]="aluno.nome_aluno" required>
+                            <label for="nome_aluno">Nome Completo</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">email</i>
+                            <input id="email_aluno" type="email" class="validate" name="codigo"
+                                [(ngModel)]="aluno.codigo" required>
+                            <label for="codigo">Email</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">lock</i>
+                            <input id="senha_aluno" type="password" class="validate" name="senha_aluno"
+                                [(ngModel)]="aluno.senha_aluno" (blur)="validaSenha()">
+                            <label for="senha_aluno">Senha</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">lock</i>
+                            <input id="confirma_senha_aluno" type="password" class="validate" name="confirma_senha_aluno"
+                            [(ngModel)]="confirma_senha"
+                            (blur)="validaSenha()">
+                            <label for="confirma_senha_aluno">Confime a senha</label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col s12 m12 l6 divCadImagem ">
+
+                    <div class="row divEnviarFoto ">
+                        <div class="col s4"></div>
+                        <div class="btn col s4 btnSelecao ">
+                            <label for='selecao-arquivo' class="label">
+                                Foto
+                            </label>
+                        </div>
+
+                        <div>
+                            <!-- Este campo está invisivel -->
+                            <input #file type="file" accept='image/*' (change)="preview(file.files)"
+                                id="selecao-arquivo">
+                        </div>
+                    </div>
+
+                    <div class="row imagem ">
+                        <img [src]="imgURL" height="200" *ngIf="imgURL" class="preview" name="foto_aluno"
+                            [(ngModel)]="aluno.foto_aluno" ngDefaultControl>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row col s12">
+                <button class="btn waves-effect waves-light" type="submit" (click)="cadastrarAluno()">Cadastrar
+                    <i class="material-icons right">send</i></button>
+
+                <button class="btn waves-effect waves-light red btnCancelar" type="reset" name="action"
+                    (click)="cancelar()">Cancelar
+                    <i class="material-icons  right">cancel</i>
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
